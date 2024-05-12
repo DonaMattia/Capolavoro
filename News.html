@@ -6,28 +6,22 @@
 <title>News</title>
 <style>
     /* Stili per il div grigio */
-    #gray-div {
-        width: 80%; /* Larghezza del 80% della larghezza del viewport */
-        height: 100vh; /* Altezza del 100% dell'altezza del viewport */
-        background-color: rgba(79, 79, 79, 0.5); /* Colore grigio con trasparenza */
-        backdrop-filter: blur(25px); /* Effetto sfocato */
-        color: white; /* Colore del testo bianco */
-        font-family: 'Arial', sans-serif; /* Font del testo */
-        border-radius: 20px; /* Raggio del bordo */
-        padding: 20px; /* Spazio interno */
-        margin: 0 auto; /* Centrare il div orizzontalmente */
-        overflow-y: auto; /* Abilita la scrollbar solo quando necessario */
-    }
+    .blurred-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(79, 79, 79, 0.5);
+    backdrop-filter: blur(2px);
+}
 
     /* Stili per il contenuto all'interno del div grigio */
     #gray-div-content {
-        max-width: 800px; /* Larghezza massima del contenuto */
         margin: 0 auto; /* Centrare il contenuto orizzontalmente */
     }
 </style>
 </head>
 <body>
-<div id="gray-div">
+<div class="blurred-background">
     <div id="gray-div-content">
         <!-- Qui inserisci il tuo contenuto -->
         <h1>Ultime notizie</h1>
