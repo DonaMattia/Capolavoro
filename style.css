@@ -1,0 +1,215 @@
+.blurred-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25%;
+    height: 100%;
+    background-color: rgba(79, 79, 79, 0.5);
+    backdrop-filter: blur(2px);
+}
+
+#center {
+    position: absolute;
+    top: 15%;
+    left: 47.5%;
+    width: 30%;
+    height: 70%;
+    /*pointer-events: none;*/
+    display: block;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    background-image: url('sfondo.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+li a {
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+li a:hover {
+    color: #B0E0E6;
+}
+
+.start-menu {
+    font-size: 1.5rem;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    font-family: 'Anton', sans-serif;
+}
+
+#logo {
+    position: absolute;
+    top: 5%;
+    width: 35%;
+    left: 32.5%;
+}
+
+#logo-yt {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    width: 10%;
+}
+
+#logo-insta {
+    position: absolute;
+    top: 89%;
+    left: 40%;
+    width: 10%;
+}
+
+#logo-grande {
+    position: absolute;
+    top: 40%;
+    width: 35%;
+    left: 25%;
+}
+
+/* Menu hamburger */
+.menu-icon {
+    display: none; /* Nascondi il menu hamburger per impostazione predefinita */
+    cursor: pointer; /* Cambia il cursore quando ci si passa sopra */
+}
+
+.menu-icon i {
+    font-size: 2rem; /* Dimensione dell'icona del menu hamburger */
+    color: white; /* Colore dell'icona */
+}
+
+@media screen and (max-width: 768px) {
+    /* Quando la larghezza dello schermo è inferiore a 768px */
+    .blurred-background {
+        width: 100%; /* Modifica la larghezza del blur background al 100% */
+        height: 25%;
+    }
+    
+    #center {
+        width: 100%; /* Modifica la larghezza del contenitore centrale al 80% */
+        left: 10%; /* Posiziona il contenitore centrale al 10% della larghezza dello schermo */
+    }
+
+    .start-menu {
+        display: none; /* Nascondi il menu principale */
+    }
+
+.icon-menu {
+  --gap: 5px;
+  --height-bar: 2.5px;
+  --pos-y-bar-one: 0;
+  --pos-y-bar-three: 0;
+  --scale-bar: 1;
+  --rotate-bar-one: 0;
+  --rotate-bar-three: 0;
+  width: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  cursor: pointer;
+  position: fixed;
+  top: 43%;
+  right: 5%;
+  z-index: 1000;
+}
+
+.bar {
+  position: relative;
+  height: var(--height-bar);
+  width: 100%;
+  border-radius: .5rem;
+  background-color: white;
+}
+
+.bar--1 {
+  top: var(--pos-y-bar-one);
+  transform: rotate(var(--rotate-bar-one));
+  transition: top 200ms 100ms, transform 100ms;
+}
+
+.bar--2 {
+  transform: scaleX(var(--scale-bar));
+  transition: transform 150ms 100ms;
+}
+
+.bar--3 {
+  bottom: var(--pos-y-bar-three);
+  transform: rotate(var(--rotate-bar-three));
+  transition: bottom 200ms 100ms, transform 100ms;
+}
+
+.check-icon:checked + .icon-menu > .bar--1 {
+  transition: top 200ms, transform 200ms 100ms;
+}
+
+.check-icon:checked + .icon-menu > .bar--3 {
+  transition: bottom 200ms, transform 200ms 100ms;
+}
+
+.check-icon:checked + .icon-menu {
+  --pos-y-bar-one: calc(var(--gap) + var(--height-bar));
+  --pos-y-bar-three: calc(var(--gap) + var(--height-bar));
+  --scale-bar: 0;
+  --rotate-bar-one: 45deg;
+  --rotate-bar-three: -45deg;
+}
+
+
+
+    #logo {
+        width: 20%;
+        left: 5%;
+        top: 35%;
+    }
+    #logo-grande {
+        width: 70%; /* Riduci la dimensione dei loghi */
+        left: 15%; /* Centra i loghi */
+    }
+    
+     #logo-yt {
+        display: none;
+    }
+    
+     #logo-insta {
+        display: none;
+    }
+    
+    /* Aggiungi altre regole CSS per rendere il testo più piccolo */
+    h1 {
+        font-size: 2rem;
+    }
+    
+    p {
+        font-size: 1rem;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 10px;
+    }
+}
+
