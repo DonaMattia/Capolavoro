@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anton&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+    </style>
+</head>
+<body ng-controller="MainController">
+<div class="container">
+    <img id="logo-grande" src="immagini/logo2.png" ng-show="showImage">
+    <div class="blurred-background">
+        <img id="logo" src="immagini/logo.png">
+    <div>
+        <ul class="start-menu">
+            <li><a href="#/!" ng-click="hideImage('home')">Home</a></li>
+            <li><a href="#!chisono" ng-click="hideImage('chisono')">Chi sono</a></li>
+            <li><a href="#!news" ng-click="HideImage('news')">News</a></li>
+            <li><a href="#!contatti" ng-click="hideImage('contatti')">Contatti</a></li>
+        </ul>
+    </div>
+        
+        
+        <!-- Contenuto Pagina -->
+        <img id="logo-insta" src="immagini/social.png">
+        <img id="logo-yt" src="immagini/youtube.png">
+    </div>
+    <div id="center" ng-view></div>
+    <br>
+    <br>
+</div>
+
+<script>
+    var app = angular.module("myApp", ["ngRoute"]);
+
+    app.controller("MainController", function($scope, $window) {
+        $scope.showImage = true; // Imposta inizialmente showImage a true
+        $scope.showDiv = false;
+        $scope.isDropdownOpen = false;
+
+        // Funzione per nascondere l'immagine
+        $scope.hideImage = function(clickedLink) {
+            // Nascondi l'immagine solo se il link cliccato è 'red'
+            if(clickedLink === 'chisono' || clickedLink === 'contatti' || clickedLink === 'news') {
+                $scope.showImage = false;
+            }
+            else if(clickedLink === 'home'){
+                $scope.showImage = true;
+            }
+        };
+    });
+
+    // Configurazione del routing
+    app.config(function($routeProvider) {
+        $routeProvider
+            .when("/", {
+                templateUrl : "main.html"
+            })
+            .when("/chisono", {
+                templateUrl : "ChiSono.html"
+            })
+            .when("/news", {
+                templateUrl : "News.html"
+            })
+            .when("/contatti", {
+                templateUrl : "Contatti.html"
+            });
+    });
+</script>
+</body>
+</html>

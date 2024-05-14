@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>Menu Responsive</title>
+     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Stile del menu a pagina intera */
+        .full-menu {
+            display: block;
+        }
+        
+        .full-menu a {
+            text-decoration: none;
+            color: black;
+        }
+
+        /* Stile al passaggio del cursore */
+       
+
+        /* Stile del menu hamburger */
+        .hamburger-menu {
+            display: none;
+        }
+
+        @media screen and (max-width: 600px) {
+            /* Nasconde il menu a pagina intera quando la larghezza della pagina è inferiore a 600px */
+            .full-menu {
+                display: none;
+            }
+
+            /* Mostra il menu hamburger quando la larghezza della pagina è inferiore a 600px */
+            .hamburger-menu {
+                display: block;
+            }
+
+            /* Rimuove la sottolineatura dai link e li rende neri */
+            .hamburger-menu a {
+                text-decoration: none;
+                color: black;
+            }
+
+            /* Stile al passaggio del cursore */
+            .hamburger-menu a:hover {
+                color: blue; /* Cambia il colore al passaggio del cursore */
+            }
+
+            /* Stile della tendina dall'alto */
+            #hamburgerDropdown {
+                display: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background-color: #f9f9f9;
+                padding: 10px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+            }
+
+            /* Icona per aprire il menu */
+            .open-icon {
+                display: inline-block;
+                cursor: pointer;
+            }
+
+            /* Stile del menu hamburger quando aperto */
+            .hamburger-menu.opened #hamburgerDropdown {
+                display: block;
+            }
+
+            /* Aggiungi padding tra i link */
+            #hamburgerDropdown a {
+                padding: 10px 0;
+                display: block;
+            }
+
+            /* Cambia colore delle icone al passaggio del cursore */
+            .open-icon:hover {
+                color: blue;
+            }
+        }
+
+        /* Rimuove i punti dai link */
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 0;
+        }
+        li {
+            margin-top: 10px;
+        }
+
+        /* Stile della sezione della chiusura */
+        .close-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Icona di chiusura */
+        .close-icon {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body ng-controller="MainController">
+
+<!-- Menu a pagina intera -->
+<div class="full-menu">
+    <ul class="start-menu">
+        <li><a href="#!/">Home</a></li>
+        <li><a href="#!/ChiSono">Chi Siamo</a></li>
+        <li><a href="#!/News">Prodotti</a></li>
+        <li><a href="#!/Contatti">Contatti</a></li>
+    </ul>
+</div>
+
+<!-- Menu hamburger -->
+<div class="hamburger-menu" ng-click="toggleMenu()">
+    <div class="toggle">
+        <div class="bars" id="bar1"></div>
+        <div class="bars" id="bar2"></div>
+        <div class="bars" id="bar3"></div>
+        <span class="open-icon">☰</span>
+    </div>
+    <div id="hamburgerDropdown">
+        <ul>
+            <li><a href="#!/">Home</a></li>
+            <li><a href="#!/ChiSono">Chi Siamo</a></li>
+            <li><a href="#!/News">Prodotti</a></li>
+            <li><a href="#!/Contatti">Contatti</a></li>
+        </ul>
+        <li class="close-section">
+            <span class="close-icon" ng-click="closeMenu()">✖</span>
+        </li>
+    </div>
+</div>
+
+<!-- Angular View Container -->
+<div ng-view></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+<script>
+    var app = angular.module("myApp", ["ngRoute"]);
+
+    app.config(function($routeProvider) {
+        $routeProvider
+            .when("/", {
+                templateUrl : "main.html"
+            })
+            .when("/ChiSono", {
+                templateUrl : "ChiSono.html"
+            })
+            .when("/News", {
+                templateUrl : "News.html"
+            })
+            .when("/Contatti", {
+                templateUrl : "Contatti.html"
+            });
+    });
+
+    app.controller("MainController", function($scope, $location) {
+        $scope.toggleMenu = function() {
+            var dropdown = document.getElementById("hamburgerDropdown");
+            var hamburgerMenu = document.querySelector(".hamburger-menu");
+
+            if (dropdown.style.display === "none" || dropdown.style.display === "") {
+                dropdown.style.display = "block";
+                hamburgerMenu.classList.add("opened");
+            } else {
+                dropdown.style.display = "none";
+                hamburgerMenu.classList.remove("opened");
+            }
+        };
+
+        $scope.closeMenu = function() {
+            var dropdown = document.getElementById("hamburgerDropdown");
+            var hamburgerMenu = document.querySelector(".hamburger-menu");
+
+            dropdown.style.display = "none";
+            hamburgerMenu.classList.remove("opened");
+        };
+    });
+</script>
+
+</body>
+</html>
