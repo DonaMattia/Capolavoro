@@ -51,28 +51,6 @@
                 $scope.showImage = true;
             }
         };
-   
-
-        // Ascolta l'evento resize della finestra per aggiornare lo stato dell'immagine
-        window.addEventListener('resize', function() {
-            $scope.$apply(function() {
-                // Rendi l'immagine nascosta se lo schermo è piccolo
-                if(window.innerWidth < 768) {
-                    $scope.showImage = false;
-                }
-            });
-        });
-
-
-        // Ascolta l'evento resize della finestra per aggiornare lo stato dell'immagine
-        window.addEventListener('resize', function() {
-            $scope.$apply(function() {
-                // Rendi l'immagine nascosta se lo schermo è piccolo
-                if(window.innerWidth < 768) {
-                    $scope.showImage = false;
-                }
-            });
-        });
 
     });
 
