@@ -43,33 +43,25 @@
         $scope.isDropdownOpen = false;
 
         $scope.hideImage = function(clickedLink) {
-        // Funzione per rilevare se lo schermo è piccolo
-        var isSmallScreen = function() {
-            return window.innerWidth < 768; // Puoi regolare la larghezza a seconda delle tue esigenze
-        };
-
-        // Nascondi l'immagine solo se il link cliccato è 'chisono', 'contatti' o 'news'
-        // e se lo schermo è piccolo
-        if(isSmallScreen()) {
-            $scope.showImage = false;
-        } else {
+            // Nascondi l'immagine solo se il link cliccato è 'red'
             if(clickedLink === 'chisono' || clickedLink === 'contatti' || clickedLink === 'news') {
                 $scope.showImage = false;
-            } else if(clickedLink === 'home'){
+            }
+            else if(clickedLink === 'home'){
                 $scope.showImage = true;
             }
-        }
+        };
     };
 
-// Ascolta l'evento resize della finestra per aggiornare lo stato dell'immagine
-window.addEventListener('resize', function() {
-    $scope.$apply(function() {
-        // Rendi l'immagine nascosta se lo schermo è piccolo
-        if(window.innerWidth < 768) {
-            $scope.showImage = false;
-        }
-    });
-});
+        // Ascolta l'evento resize della finestra per aggiornare lo stato dell'immagine
+        window.addEventListener('resize', function() {
+            $scope.$apply(function() {
+                // Rendi l'immagine nascosta se lo schermo è piccolo
+                if(window.innerWidth < 768) {
+                    $scope.showImage = false;
+                }
+            });
+        });
 
 
         // Ascolta l'evento resize della finestra per aggiornare lo stato dell'immagine
