@@ -121,6 +121,7 @@ li a:hover {
     #logo-grande {
         width: 70%; /* Riduci la dimensione dei loghi */
         left: 15%; /* Centra i loghi */
+        display: none;
     }
     
      #logo-yt {
