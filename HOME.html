@@ -14,15 +14,17 @@
     <div class="blurred-background">
         <img id="logo" src="logo.png">
         <div>
-            <ul class="start-menu">
+            <ul class="start-menu" ng-class="{'open': isMenuOpen}">
                 <li><a href="#/!" ng-click="hideImage('home')">Home</a></li>
                 <li><a href="#!chisono" ng-click="hideImage('chisono')">Chi sono</a></li>
                 <li><a href="#!news" ng-click="hideImage('news')">News</a></li>
                 <li><a href="#!contatti" ng-click="hideImage('contatti')">Contatti</a></li>
             </ul>
         </div>
-
-        <!-- Contenuto Pagina -->
+        <!-- Icona hamburger menù -->
+        <div class="hamburger-menu" ng-click="toggleMenu()">
+            &#9776;
+        </div>
         <img id="logo-insta" src="social.png">
         <img id="logo-yt" src="youtube.png">
     </div>
@@ -33,19 +35,23 @@
     var app = angular.module("myApp", ["ngRoute"]);
 
     app.controller("MainController", function($scope) {
-        $scope.showImage = true; // Imposta inizialmente showImage a true
+        $scope.showImage = true;
         $scope.isMenuOpen = false;
 
-        // Funzione per nascondere l'immagine
         $scope.hideImage = function(clickedLink) {
             if (clickedLink === 'chisono' || clickedLink === 'contatti' || clickedLink === 'news') {
                 $scope.showImage = false;
             } else if (clickedLink === 'home') {
                 $scope.showImage = true;
             }
+            $scope.isMenuOpen = false;  // Chiudi il menù dopo un click
         };
 
-    // Configurazione del routing
+        $scope.toggleMenu = function() {
+            $scope.isMenuOpen = !$scope.isMenuOpen;
+        };
+    });
+
     app.config(function($routeProvider) {
         $routeProvider
             .when("/", {
@@ -64,4 +70,5 @@
 </script>
 </body>
 </html>
+
 
