@@ -1,3 +1,194 @@
+/*.blurred-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25%;
+    height: 100%;
+    background-color: rgba(79, 79, 79, 0.5);
+    backdrop-filter: blur(2px);
+}
+
+#center {
+    position: fixed;
+    top: 10%;
+    left: 42.5%;
+    width: 50%;
+    height: 80%;
+    display: block;
+    font-size: 1vw;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    background-image: url('immagini/sfondo.png');
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li a {
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+li a:hover {
+    color: #B0E0E6;
+}
+
+.start-menu {
+    font-size: 1.5vw;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    font-family: 'Anton', sans-serif;
+}
+
+#logo {
+    position: absolute;
+    top: 5%;
+    width: 35%;
+    left: 32.5%;
+}
+
+#logo-yt {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    width: 10%;
+}
+
+#logo-insta {
+    position: absolute;
+    top: 89%;
+    left: 40%;
+    width: 10%;
+}
+
+#logo-grande {
+    position: absolute;
+    top: 40%;
+    width: 35%;
+    left: 25%;
+}
+
+.menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    top: 65px;
+    right: 50px;
+    color: white;
+}
+
+.navbar {
+    display: none; 
+    background-color: rgba(0, 0, 0, 0.5); 
+    width: 100%;
+    height: 80%;
+    position: absolute; 
+    top: 120px;
+    left: 0;
+    flex-direction: row; 
+    justify-content: center; 
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; 
+
+.navbar li {
+    margin: 10px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-icon {
+        display: block; 
+    }
+
+    .navbar.show {
+        display: flex; 
+    }
+
+    .navbar {
+        flex-direction: column; 
+        align-items: center; 
+        font-size: 3.0vw;
+        font-family: 'Anton', sans-serif;
+    
+    }
+
+    .blurred-background {
+        width: 100%; 
+        height: 25%;
+        background-color: black;
+    }
+
+    #center {
+        width: 100%; 
+        left: 10%; 
+    }
+
+    .start-menu {
+        display: none; 
+        
+    }
+
+    #logo {
+        width: 20%;
+        left: 5%;
+        top: 35%;
+    }
+    #logo-grande {
+        width: 70%; 
+        left: 15%; 
+    }
+
+    #logo-yt {
+        display: none;
+    }
+
+    #logo-insta {
+        display: none;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 10px;
+    }
+}*/
 .blurred-background {
     position: absolute;
     top: 0;
@@ -101,7 +292,7 @@ li a:hover {
 
 .navbar {
     display: none; /* Nascondi menù per schermi piccoli */
-    background-color: rgba(0, 0, 0, 0.5); /* Aggiungi sfondo nero quando il menù è visibile */
+    background-color: black; /* Aggiungi sfondo nero quando il menù è visibile */
     width: 100%;
     height: 80%;
     position: absolute; /* Sovrappone il menù */
@@ -109,6 +300,7 @@ li a:hover {
     left: 0;
     flex-direction: row; /* Disponi i link in orizzontale */
     justify-content: center; /* Centra i link orizzontalmente */
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .navbar ul {
@@ -142,7 +334,6 @@ li a:hover {
         align-items: center; /* Centra i link verticalmente */
         font-size: 3.0vw;
         font-family: 'Anton', sans-serif;
-    
     }
 
     .blurred-background {
@@ -158,7 +349,6 @@ li a:hover {
 
     .start-menu {
         display: none; /* Nascondi il menu principale */
-        
     }
 
     #logo {
@@ -190,3 +380,4 @@ li a:hover {
         margin-top: 10px;
     }
 }
+
