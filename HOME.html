@@ -21,18 +21,6 @@
                 <li><a href="#!contatti" ng-click="hideImage('contatti')">Contatti</a></li>
             </ul>
         </div>
-        <div class="menu-icon" ng-click="toggleMenu()">
-            &#9776; <!-- Icona hamburger -->
-        </div>
-
-        <nav class="navbar" ng-class="{'show': isMenuOpen}">
-            <ul>
-                <li><a href="#/!" ng-click="closeMenu()">Home</a></li>
-                <li><a href="#!chisono" ng-click="closeMenu()">Chi siamo</a></li>
-                <li><a href="#!news" ng-click="closeMenu()">Servizi</a></li>
-                <li><a href="#!contatti" ng-click="closeMenu()">Contatti</a></li>
-            </ul>
-        </nav>
 
         <!-- Contenuto Pagina -->
         <img id="logo-insta" src="social.png">
@@ -56,16 +44,6 @@
                 $scope.showImage = true;
             }
         };
-
-        // Funzione per aprire/chiudere il menù
-        $scope.toggleMenu = function() {
-            $scope.isMenuOpen = !$scope.isMenuOpen;
-        };
-
-        $scope.closeMenu = function() {
-            $scope.isMenuOpen = false;
-        };
-    });
 
     // Configurazione del routing
     app.config(function($routeProvider) {
