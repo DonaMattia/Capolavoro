@@ -1,4 +1,4 @@
- .blurred-background {
+.blurred-background {
     position: absolute;
     top: 0;
     left: 0;
@@ -9,13 +9,11 @@
 }
 
 #center {
-    
     position: fixed;
     top: 10%;
     left: 42.5%;
     width: 50%;
     height: 80%;
-    /*pointer-events: none;*/
     display: block;
     font-size: 1vw;
 }
@@ -30,7 +28,7 @@ html {
 .container {
     width: 100%;
     height: 100%;
-    background-image: url('sfondo.png');
+    background-image: url('immagini/sfondo.png');
     background-size: cover;
     background-position: center;
     position: absolute;
@@ -41,9 +39,6 @@ html {
 ul {
     list-style: none;
     padding: 0;
-}
-
-li {
 }
 
 li a {
@@ -94,14 +89,68 @@ li a:hover {
     left: 25%;
 }
 
+.menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+    display: none; /* Nascondi per schermi grandi */
+    position: absolute;
+    top: 65px;
+    right: 50px;
+    color: white;
+}
+
+.navbar {
+    display: none; /* Nascondi menù per schermi piccoli */
+    background-color: rgba(0, 0, 0, 0.5); /* Aggiungi sfondo nero quando il menù è visibile */
+    width: 100%;
+    height: 80%;
+    position: absolute; /* Sovrappone il menù */
+    top: 120px; /* Posiziona il menù sotto l'header */
+    left: 0;
+    flex-direction: row; /* Disponi i link in orizzontale */
+    justify-content: center; /* Centra i link orizzontalmente */
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Utilizziamo flexbox per disporre i link in orizzontale */
+}
+
+.navbar li {
+    margin: 10px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
 
 @media screen and (max-width: 768px) {
-    /* Quando la larghezza dello schermo è inferiore a 768px */
+    .menu-icon {
+        display: block; /* Mostra per schermi piccoli */
+    }
+
+    .navbar.show {
+        display: flex; /* Mostra menù se classe 'show' è presente */
+    }
+
+    .navbar {
+        flex-direction: column; /* Disponi i link in colonna per schermi piccoli */
+        align-items: center; /* Centra i link verticalmente */
+        font-size: 3.0vw;
+        font-family: 'Anton', sans-serif;
+    
+    }
+
     .blurred-background {
         width: 100%; /* Modifica la larghezza del blur background al 100% */
         height: 25%;
+        background-color: black;
     }
-    
+
     #center {
         width: 100%; /* Modifica la larghezza del contenitore centrale al 80% */
         left: 10%; /* Posiziona il contenitore centrale al 10% della larghezza dello schermo */
@@ -109,9 +158,8 @@ li a:hover {
 
     .start-menu {
         display: none; /* Nascondi il menu principale */
+        
     }
-
-
 
     #logo {
         width: 20%;
@@ -119,24 +167,22 @@ li a:hover {
         top: 35%;
     }
     #logo-grande {
-        display: none;
         width: 70%; /* Riduci la dimensione dei loghi */
         left: 15%; /* Centra i loghi */
     }
-    
-     #logo-yt {
+
+    #logo-yt {
         display: none;
     }
-    
-     #logo-insta {
+
+    #logo-insta {
         display: none;
     }
-    
-    /* Aggiungi altre regole CSS per rendere il testo più piccolo */
+
     h1 {
         font-size: 2rem;
     }
-    
+
     p {
         font-size: 1rem;
         margin-left: 10px;
