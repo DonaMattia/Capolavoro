@@ -100,6 +100,24 @@ li a:hover {
     color: white; /* Colore dell'icona bianco */
 }
 
+.mobile-menu {
+    position: fixed;
+    top: 60px; /* posizionamento rispetto al bordo superiore */
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* sfondo semi-trasparente */
+    width: 100%; /* occupa tutta la larghezza */
+    padding: 20px; /* spazio interno */
+    box-sizing: border-box;
+    display: none; /* di default nascosta */
+}
+
+.mobile-menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 10px; /* spazio tra i link */
+}
+
 
 
 @media screen and (max-width: 768px) {
@@ -113,6 +131,8 @@ li a:hover {
     .hamburger-menu {
         display: block;
     }
+
+    .mobile-menu {display: block;}
 
     #center {
         width: 100%; /* Modifica la larghezza del contenitore centrale al 80% */
