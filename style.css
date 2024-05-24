@@ -1,3 +1,4 @@
+
 /*.blurred-background {
     position: absolute;
     top: 0;
@@ -18,23 +19,32 @@
     font-size: 1vw;
 }
 
+
+
 body,
 html {
     margin: 0;
     padding: 0;
     height: 100%;
+
+    background-image: url('sfondo.png');
+    background-size: cover;
+    background-position: center;
+
 }
 
 .container {
     width: 100%;
     height: 100%;
     background-image: url('immagini/sfondo.png');
+    background-image: url('sfondo.png');
     background-size: cover;
     background-position: center;
     position: absolute;
     top: 0;
     left: 0;
 }
+
 
 ul {
     list-style: none;
@@ -189,6 +199,7 @@ li a:hover {
         margin-top: 10px;
     }
 }*/
+
 .blurred-background {
     position: absolute;
     top: 0;
@@ -200,36 +211,23 @@ li a:hover {
 }
 
 #center {
+    
     position: fixed;
     top: 10%;
     left: 42.5%;
     width: 50%;
     height: 80%;
+    /*pointer-events: none;*/
     display: block;
     font-size: 1vw;
-}
-
-body,
-html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-}
-
-.container {
-    width: 100%;
-    height: 100%;
-    background-image: url('immagini/sfondo.png');
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    top: 0;
-    left: 0;
 }
 
 ul {
     list-style: none;
     padding: 0;
+}
+
+li {
 }
 
 li a {
@@ -279,6 +277,7 @@ li a:hover {
     width: 35%;
     left: 25%;
 }
+
 
 .menu-icon {
     font-size: 30px;
@@ -339,9 +338,8 @@ li a:hover {
     .blurred-background {
         width: 100%; /* Modifica la larghezza del blur background al 100% */
         height: 25%;
-        background-color: black;
     }
-
+    
     #center {
         width: 100%; /* Modifica la larghezza del contenitore centrale al 80% */
         left: 10%; /* Posiziona il contenitore centrale al 10% della larghezza dello schermo */
@@ -351,28 +349,32 @@ li a:hover {
         display: none; /* Nascondi il menu principale */
     }
 
+
+
     #logo {
         width: 20%;
         left: 5%;
         top: 35%;
     }
     #logo-grande {
+        display: none;
         width: 70%; /* Riduci la dimensione dei loghi */
         left: 15%; /* Centra i loghi */
     }
-
-    #logo-yt {
+    
+     #logo-yt {
         display: none;
     }
-
-    #logo-insta {
+    
+     #logo-insta {
         display: none;
     }
-
+    
+    /* Aggiungi altre regole CSS per rendere il testo più piccolo */
     h1 {
         font-size: 2rem;
     }
-
+    
     p {
         font-size: 1rem;
         margin-left: 10px;
