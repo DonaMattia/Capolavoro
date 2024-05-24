@@ -25,6 +25,13 @@
         <div class="hamburger-menu" ng-click="toggleMenu()">
             &#9776;
         </div>
+        <div class="mobile-menu" ng-show="isMenuOpen">
+            <a href="#/!" ng-click="hideImage('home')">Home</a>
+            <a href="#!chisono" ng-click="hideImage('chisono')">Chi sono</a>
+            <a href="#!news" ng-click="hideImage('news')">News</a>
+            <a href="#!contatti" ng-click="hideImage('contatti')">Contatti</a>
+        </div>
+
         <img id="logo-insta" src="social.png">
         <img id="logo-yt" src="youtube.png">
     </div>
