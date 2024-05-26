@@ -102,7 +102,7 @@ li a:hover {
 
 .mobile-menu {
     position: fixed;
-    top: 60px; /* posizionamento rispetto al bordo superiore */
+    top: 300px; /* posizionamento rispetto al bordo superiore */
     right: 0;
     background-color: rgba(0, 0, 0, 0.8); /* sfondo semi-trasparente */
     width: 100%; /* occupa tutta la larghezza */
@@ -130,6 +130,7 @@ li a:hover {
 
     .hamburger-menu {
         display: block;
+        z-index: 1000;
     }
 
     .mobile-menu {display: block;}
