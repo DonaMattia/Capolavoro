@@ -94,7 +94,7 @@ li a:hover {
     font-size: 30px;
     cursor: pointer;
     position: fixed;
-    top: 30px;
+    top: 80px;
     right: 30px;
     z-index: 1000;
     color: white; /* Colore dell'icona bianco */
