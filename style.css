@@ -94,9 +94,13 @@ li a:hover {
     cursor: pointer;
     display: none; /* Nascondi per schermi grandi */
     position: absolute;
-    top: 65px;
-    right: 50px;
+    top: 20px; /* Distanza dal top per migliorare la visibilità */
+    right: 20px; /* Distanza dal right per migliorare la visibilità */
     color: white;
+    width: 50px; /* Larghezza del contenitore */
+    height: 50px; /* Altezza del contenitore */
+    line-height: 50px; /* Allinea verticalmente il contenuto */
+    text-align: center; /* Allinea orizzontalmente il contenuto */
 }
 
 .navbar {
@@ -152,8 +156,8 @@ li a:hover {
     }
 
     #center {
-        width: 100%; /* Modifica la larghezza del contenitore centrale al 80% */
-        left: 10%; /* Posiziona il contenitore centrale al 10% della larghezza dello schermo */
+        width: 100%; /* Modifica la larghezza del contenitore centrale al 100% */
+        left: 0; /* Posiziona il contenitore centrale al 0% della larghezza dello schermo */
     }
 
     .start-menu {
@@ -165,17 +169,15 @@ li a:hover {
         left: 5%;
         top: 35%;
     }
+
     #logo-grande {
         width: 70%; /* Riduci la dimensione dei loghi */
         left: 15%; /* Centra i loghi */
     }
 
-    #logo-yt {
-        display: none;
-    }
-
+    #logo-yt,
     #logo-insta {
-        display: none;
+        display: none; /* Nascondi i loghi dei social per schermi piccoli */
     }
 
     h1 {
