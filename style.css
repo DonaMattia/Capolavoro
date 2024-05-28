@@ -116,7 +116,7 @@ li a:hover {
     width: 100%;
     height: 80%;
     position: absolute; /* Sovrappone il menù */
-    top: 60px; /* Posiziona il menù sotto l'header */
+    top: 120px; /* Posiziona il menù sotto l'header */
     left: 0;
     flex-direction: row; /* Disponi i link in orizzontale */
     justify-content: center; /* Centra i link orizzontalmente */
@@ -156,7 +156,7 @@ li a:hover {
         align-items: center; /* Centra i link verticalmente */
         font-size: 3.0vw;
         font-family: 'Anton', sans-serif;
-        top: 100px; /* Modifica per evitare sovrapposizione */
+        top: 50px; /* Modifica per evitare sovrapposizione */
     }
 
     .blurred-background {
@@ -168,7 +168,9 @@ li a:hover {
     #center {
         width: 100%; /* Modifica la larghezza del contenitore centrale al 100% */
         left: 0; /* Posiziona il contenitore centrale al 0% della larghezza dello schermo */
-        top: 30%;
+        top: 70%; /* Posiziona il contenitore centrale sotto il menù */
+        height: 30%; /* Riduci l'altezza del contenitore per adattarsi allo schermo */
+        overflow: auto; /* Aggiungi scrolling se necessario */
     }
 
     .start-menu {
