@@ -148,6 +148,7 @@ li a:hover {
         width: 20%;
         left: 5%;
         top: 35%;
+        display: none;
     }
     #logo-grande {
         width: 70%; /* Riduci la dimensione dei loghi */
