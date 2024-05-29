@@ -166,9 +166,9 @@ li a:hover {
     }
 
     #center {
-        width: 80%; /* Modifica la larghezza del contenitore centrale al 100% */
+        width: 90%; /* Modifica la larghezza del contenitore centrale al 100% */
         left: 0; /* Posiziona il contenitore centrale al 0% della larghezza dello schermo */
-        top: 30%; /* Posiziona il contenitore centrale sotto il menù */
+        top: 250px; /* Posiziona il contenitore centrale sotto il menù */
         height: auto; /* Riduci l'altezza del contenitore per adattarsi allo schermo */ 
     }
 
