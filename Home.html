@@ -44,22 +44,29 @@
 <script>
     var app = angular.module("myApp", ["ngRoute"]);
 
-    app.controller("MainController", function($scope) {
-    // Recupera lo stato dell'immagine da localStorage
-    var showImageStored = localStorage.getItem('showImage');
-    $scope.showImage = showImageStored === null ? true : JSON.parse(showImageStored);
-
+    app.controller("MainController", function($scope, $location) {
+    $scope.showImage = true; // Imposta inizialmente showImage a true
     $scope.isMenuOpen = false;
 
-    // Funzione per nascondere l'immagine e salvare lo stato in localStorage
+    // Funzione per nascondere l'immagine
     $scope.hideImage = function(clickedLink) {
         if (clickedLink === 'chisono' || clickedLink === 'contatti' || clickedLink === 'news') {
             $scope.showImage = false;
         } else if (clickedLink === 'home') {
             $scope.showImage = true;
         }
-        localStorage.setItem('showImage', JSON.stringify($scope.showImage));
     };
+
+    // Funzione per determinare se mostrare l'immagine in base al percorso
+    $scope.$on('$locationChangeSuccess', function() {
+        var path = $location.path();
+        if (path === '/' || path === '/home') {
+            $scope.showImage = true;
+        } else {
+            $scope.showImage = false;
+        }
+    });
+});
 
         // Funzione per aprire/chiudere il menù
         $scope.toggleMenu = function() {
