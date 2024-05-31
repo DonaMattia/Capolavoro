@@ -55,19 +55,21 @@
         font-size: 4vw; /* Riduci il font-size all'interno di #blurred-center */
         border-radius: 25px; /* Riduci il raggio del bordo per adattarsi meglio agli schermi piccoli */
         padding: 5px; /* Riduci il padding */
-        height: 100%;
+        height: auto; /* Permetti l'altezza automatica */
     }
 
     #white-border {
         width: 90%; /* Aumenta la larghezza per utilizzare più spazio disponibile */
-        height: 90%; /* Permetti al contenitore di adattarsi al contenuto */
+        height: auto; /* Permetti al contenitore di adattarsi al contenuto */
+        min-height: 50vh; /* Imposta un'altezza minima per evitare che diventi troppo stretto */
         border-radius: 20px; /* Riduci il raggio del bordo */
         padding: 5px; /* Riduci il padding */
     }
 
     .insta {
         width: 100%; /* Utilizza il 100% della larghezza disponibile */
-        height: auto; /* Permetti all'iframe di adattarsi all'altezza del contenuto */
+        height: 50vh; /* Imposta un'altezza specifica per l'iframe */
+        max-height: 90%; /* Imposta un'altezza massima per evitare che diventi troppo alto */
     }
 }
 
