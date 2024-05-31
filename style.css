@@ -1,3 +1,20 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: auto; /* Permetti lo scorrimento della pagina */
+}
+
+.container {
+    width: 100%;
+    min-height: 100%; /* Permetti al contenitore di espandersi oltre l'altezza iniziale */
+    background-image: url('sfondo.png');
+    background-size: cover;
+    background-position: center;
+    position: relative; /* Modifica da 'absolute' a 'relative' */
+}
+
 .blurred-background {
     position: absolute;
     top: 0;
@@ -10,32 +27,15 @@
 }
 
 #center {
-    position: fixed;
+    position: relative; /* Modifica da 'fixed' a 'relative' */
     top: 10%;
     left: 42.5%;
     width: 50%;
-    height: 80%;
+    height: auto; /* Permetti a #center di espandersi in altezza */
     display: block;
     font-size: 1vw;
     z-index: 0; /* Assicurati che il centro sia dietro al menù */
-}
-
-body,
-html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-}
-
-.container {
-    width: 100%;
-    height: 100%;
-    background-image: url('sfondo.png');
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    top: 0;
-    left: 0;
+    overflow: auto; /* Permetti lo scorrimento interno se necessario */
 }
 
 ul {
@@ -100,7 +100,7 @@ li a:hover {
     cursor: pointer;
     display: none; /* Nascondi per schermi grandi */
     position: absolute;
-    top: 5%; /* Stessa altezza del logo piccolo */
+    top: 35%; /* Stessa altezza del logo piccolo */
     right: 20px; /* Distanza dal right per migliorare la visibilità */
     color: white;
     width: 50px; /* Larghezza del contenitore */
@@ -114,7 +114,7 @@ li a:hover {
     display: none; /* Nascondi menù per schermi piccoli */
     background-color: black; /* Aggiungi sfondo nero quando il menù è visibile */
     width: 100%;
-    height: 80%;
+    height: auto; /* Permetti alla navbar di adattarsi al contenuto */
     position: absolute; /* Sovrappone il menù */
     top: 120px; /* Posiziona il menù sotto l'header */
     left: 0;
@@ -166,10 +166,10 @@ li a:hover {
     }
 
     #center {
-        width: 90%; /* Modifica la larghezza del contenitore centrale al 100% */
-        left: 2.5%; /* Posiziona il contenitore centrale al 0% della larghezza dello schermo */
-        top: 30%; /* Posiziona il contenitore centrale sotto il menù */
-        height: auto; /* Riduci l'altezza del contenitore per adattarsi allo schermo */ 
+        width: 90%; /* Modifica la larghezza del contenitore centrale al 90% */
+        left: 5%; /* Posiziona il contenitore centrale al 5% della larghezza dello schermo */
+        top: 45%; /* Posiziona il contenitore centrale sotto il menù */
+        height: auto; /* Permetti a #center di espandersi in altezza */
     }
 
     .start-menu {
