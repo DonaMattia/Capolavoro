@@ -10,7 +10,7 @@
 }
 
 #center {
-    position: fixed;
+    position: relative;
     top: 10%;
     left: 42.5%;
     width: 50%;
