@@ -60,16 +60,17 @@
         }
         localStorage.setItem('showImage', JSON.stringify($scope.showImage));
     };
+    
+    // Funzione per aprire/chiudere il menù
+    $scope.toggleMenu = function() {
+        $scope.isMenuOpen = !$scope.isMenuOpen;
+    };
 
-        // Funzione per aprire/chiudere il menù
-        $scope.toggleMenu = function() {
-            $scope.isMenuOpen = !$scope.isMenuOpen;
-        };
-
-        $scope.closeMenu = function() {
-            $scope.isMenuOpen = false;
-        };
-    });
+    $scope.closeMenu = function() {
+        $scope.isMenuOpen = false;
+    };
+});
+    
 
     // Configurazione del routing
     app.config(function($routeProvider) {
