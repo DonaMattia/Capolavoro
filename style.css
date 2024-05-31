@@ -144,9 +144,6 @@ li a:hover {
 
 @media screen and (max-width: 768px) {
 
-    .container{
-        overflow-y: auto;
-    }
     .menu-icon {
         display: block; /* Mostra per schermi piccoli */
         top: 35%; /* Allinea con il logo piccolo */
