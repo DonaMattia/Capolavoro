@@ -18,6 +18,7 @@
     display: block;
     font-size: 1vw;
     z-index: 0; /* Assicurati che il centro sia dietro al menù */
+    overflow: auto;
 }
 
 body,
