@@ -6,44 +6,70 @@
 <title>Pagina con div bianco interno</title>
 <style>
     body, html {
-        height: 100%;
-        margin: 0;
-        padding: 0;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto; /* Permetti lo scorrimento verticale */
+}
+
+#blurred-center {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(79, 79, 79, 0.5);
+    backdrop-filter: blur(25px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.3vw;
+    font-family: 'Anton', sans-serif;
+    border-radius: 50px;
+    padding: 10px;
+}
+
+/* Stili per il div bianco interno */
+#white-border {
+    background-color: white;
+    width: 80%;
+    height: 93%; /* Occupa il 100% dell'altezza del #blurred-center */
+    border-radius: 40px; /* Modifica il raggio del bordo per renderlo più piccolo */
+    padding: 10px; /* Aggiungi spazio interno */
+    display: flex; /* Utilizza flexbox per allineare l'iframe */
+    justify-content: center; /* Allinea l'iframe al centro orizzontalmente */
+    align-items: center; /* Allinea l'iframe al centro verticalmente */
+}
+
+/* Stili per l'iframe */
+.insta {
+    width: 90%;
+    height: 100%;
+    border: none; /* Rimuove il bordo predefinito */
+}
+
+@media screen and (max-width: 768px) {
+    body, html {
+        font-size: 3.5vw; /* Riduci il font-size per adattarsi agli schermi più piccoli */
     }
-    
+
     #blurred-center {
-        width: 100%;
-        height: 100%;
-        background-color: rgba(79, 79, 79, 0.5);
-        backdrop-filter: blur(25px);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        font-size: 1.3vw;
-        font-family: 'Anton', sans-serif;
-        border-radius: 50px;
-        padding: 10px;
+        font-size: 4vw; /* Riduci il font-size all'interno di #blurred-center */
+        border-radius: 25px; /* Riduci il raggio del bordo per adattarsi meglio agli schermi piccoli */
+        padding: 5px; /* Riduci il padding */
     }
-    
-    /* Stili per il div bianco interno */
+
     #white-border {
-        background-color: white;
-        width: 80%;
-        height: 93%; /* Occupa il 100% dell'altezza del #blurred-center */
-        border-radius: 40px; /* Modifica il raggio del bordo per renderlo più piccolo */
-        padding: 10px; /* Aggiungi spazio interno */
-        display: flex; /* Utilizza flexbox per allineare l'iframe */
-        justify-content: center; /* Allinea l'iframe al centro orizzontalmente */
-        align-items: center; /* Allinea l'iframe al centro verticalmente */
+        width: 90%; /* Aumenta la larghezza per utilizzare più spazio disponibile */
+        height: auto; /* Permetti al contenitore di adattarsi al contenuto */
+        border-radius: 20px; /* Riduci il raggio del bordo */
+        padding: 5px; /* Riduci il padding */
     }
-    
-    /* Stili per l'iframe */
+
     .insta {
-        width: 90%;
-        height: 100%;
-        border: none; /* Rimuove il bordo predefinito */
+        width: 100%; /* Utilizza il 100% della larghezza disponibile */
+        height: auto; /* Permetti all'iframe di adattarsi all'altezza del contenuto */
     }
+}
+
 </style>
 </head>
 <body>
