@@ -1,13 +1,13 @@
-
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pagina all'interno dell'iframe</title>
-<style>
-  /* Stili per WebKit-based browsers (Chrome, Safari) */
+<link rel="stylesheet" href="style.css">
+</head>
+  <style>
+    /* Stili per WebKit-based browsers (Chrome, Safari) */
 body::-webkit-scrollbar {
     width: 8px; /* Larghezza della scrollbar */
     height: 8px; /* Altezza della scrollbar */
@@ -75,10 +75,20 @@ body {
         border-radius: 25px; /* Riduci il raggio del bordo per adattarsi meglio agli schermi piccoli */
         padding: 5px; /* Riduci il padding */
     }
+
+    /* Rimpicciolisci le immagini */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Se hai immagini specifiche, puoi ridurle ulteriormente */
+    #logo, #logo-yt, #logo-insta, #logo-grande {
+        width: 50%; /* Rimpicciolisce ulteriormente le immagini */
+    }
 }
 
-</style>
-</head>
+  </style>
 <body>
 
   <center>
