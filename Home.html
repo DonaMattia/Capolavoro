@@ -26,10 +26,10 @@
 
         <nav class="navbar" ng-class="{'show': isMenuOpen}">
             <ul>
-                <li><a href="#/!" ng-click="closeMenu()">HOME</a></li>
-                <li><a href="#!chisono" ng-click="closeMenu()">CHI SONO</a></li>
-                <li><a href="#!news" ng-click="closeMenu()">NEWS</a></li>
-                <li><a href="#!contatti" ng-click="closeMenu()">CONTATTI</a></li>
+                <li><a href="#/!"  ng-click="hideImage('home'); closeMenu()">HOME</a></li>
+                <li><a href="#!chisono" ng-click="hideImage('chisono'); closeMenu()">CHI SONO</a></li>
+                <li><a href="#!news" ng-click="hideImage('news'); closeMenu()">NEWS</a></li>
+                <li><a href="#!contatti" ng-click="hideImage('contatti'); closeMenu()">CONTATTI</a></li>
             </ul>
         </nav>
 
