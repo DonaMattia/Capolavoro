@@ -162,7 +162,7 @@ li a:hover {
 
     .blurred-background {
         width: 100%; /* Modifica la larghezza del blur background al 100% */
-        height: 25%;
+        height: 130px;
         background-color: black;
     }
 
