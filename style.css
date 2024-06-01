@@ -155,11 +155,10 @@ li a:hover {
     }
 
     .navbar {
-        flex-direction: column; /* Disponi i link in colonna per schermi piccoli */
         align-items: center; /* Centra i link verticalmente */
         font-size: 3.0vw;
         font-family: 'Anton', sans-serif;
-        top: 50px; /* Modifica per evitare sovrapposizione */
+        top: 300px; /* Modifica per evitare sovrapposizione */
     }
 
     .blurred-background {
