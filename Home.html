@@ -52,10 +52,11 @@ app.controller("MainController", function($scope, $location) {
     // Imposta l'immagine visibile se la pagina è home al primo caricamento
     if (initialPath.includes('Home.html#!/')) {
         $scope.showImage = true;
+        localStorage.setItem('showImage', JSON.stringify(true));
     } else if (showImageStored !== null) {
         $scope.showImage = JSON.parse(showImageStored);
     } else {
-        $scope.showImage = true;
+        $scope.showImage = false;
     }
 
     $scope.isMenuOpen = false;
@@ -69,6 +70,7 @@ app.controller("MainController", function($scope, $location) {
         }
         localStorage.setItem('showImage', JSON.stringify($scope.showImage));
     };
+
 
 
     // Funzione per aprire/chiudere il menù
