@@ -51,8 +51,9 @@
 
     $scope.isMenuOpen = false;
 
-    // Imposta l'immagine visibile se la pagina è home
-    if ($location.path() === '/home' || $location.path() === '/' || $location.path() === '') {
+    // Controllo dell'URL per impostare l'immagine visibile se la pagina è home
+    var currentPath = $location.absUrl();
+    if (currentPath.includes('Home.html#!/')) {
         $scope.showImage = true;
     }
 
@@ -65,6 +66,8 @@
         }
         localStorage.setItem('showImage', JSON.stringify($scope.showImage));
     };
+
+
 
 
     
