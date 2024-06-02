@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
-
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
@@ -9,108 +8,98 @@
     <link rel="stylesheet" href="style.css">
     <title>Discovering_the_Universe</title>
 </head>
-
 <body ng-controller="MainController">
-    <div class="container">
-        <img id="logo-grande" src="logo2.png" ng-show="showImage">
-        <div class="blurred-background">
-            <img id="logo" src="logo.png">
-            <div>
-                <ul class="start-menu">
-                    <li><a href="#!/home" ng-click="hideImage('home')">HOME</a></li>
-                    <li><a href="#!/chisono" ng-click="hideImage('chisono')">CHI SONO</a></li>
-                    <li><a href="#!/news" ng-click="hideImage('news')">NEWS</a></li>
-                    <li><a href="#!/contatti" ng-click="hideImage('contatti')">CONTATTI</a></li>
-                </ul>
-            </div>
-            <div class="menu-icon" ng-click="toggleMenu()">
-                &#9776; <!-- Icona hamburger -->
-            </div>
-
-            <nav class="navbar" ng-class="{'show': isMenuOpen}">
-                <ul>
-                    <li><a href="#!/home" ng-click="hideImage('home'); closeMenu()">HOME</a></li>
-                    <li><a href="#!/chisono" ng-click="hideImage('chisono'); closeMenu()">CHI SONO</a></li>
-                    <li><a href="#!/news" ng-click="hideImage('news'); closeMenu()">NEWS</a></li>
-                    <li><a href="#!/contatti" ng-click="hideImage('contatti'); closeMenu()">CONTATTI</a></li>
-                </ul>
-            </nav>
-
-            <!-- Contenuto Pagina -->
-            <div id="center" ng-view></div>
+<div class="container">
+    <img id="logo-grande" src="logo2.png" ng-show="showImage">
+    <div class="blurred-background">
+        <img id="logo" src="logo.png">
+        <div>
+            <ul class="start-menu">
+                <li><a href="#/!" ng-click="hideImage('home')">HOME</a></li>
+                <li><a href="#!chisono" ng-click="hideImage('chisono')">CHI SONO</a></li>
+                <li><a href="#!news" ng-click="hideImage('news')">NEWS</a></li>
+                <li><a href="#!contatti" ng-click="hideImage('contatti')">CONTATTI</a></li>
+            </ul>
         </div>
+        <div class="menu-icon" ng-click="toggleMenu()">
+            &#9776; <!-- Icona hamburger -->
+        </div>
+
+        <nav class="navbar" ng-class="{'show': isMenuOpen}">
+            <ul>
+                <li><a href="#/!"  ng-click="hideImage('home'); closeMenu()">HOME</a></li>
+                <li><a href="#!chisono" ng-click="hideImage('chisono'); closeMenu()">CHI SONO</a></li>
+                <li><a href="#!news" ng-click="hideImage('news'); closeMenu()">NEWS</a></li>
+                <li><a href="#!contatti" ng-click="hideImage('contatti'); closeMenu()">CONTATTI</a></li>
+            </ul>
+        </nav>
+
+        <!-- Contenuto Pagina -->
+        <img id="logo-insta" src="social.png">
+        <img id="logo-yt" src="youtube.png">
     </div>
+    <div id="center" ng-view></div>
+</div>
 
-    <script>
-        var app = angular.module("myApp", ["ngRoute"]);
+<script>
+    var app = angular.module("myApp", ["ngRoute"]);
 
-        app.controller("MainController", function($scope, $location, $rootScope) {
-            // Recupera lo stato dell'immagine da localStorage
-            var showImageStored = localStorage.getItem('showImage');
-            var initialPath = $location.absUrl();
+app.controller("MainController", function($scope, $location) {
+    // Recupera lo stato dell'immagine da localStorage
+    var showImageStored = localStorage.getItem('showImage');
+    var initialPath = $location.absUrl();
 
-            // Imposta l'immagine visibile se la pagina è home al primo caricamento
-            if (initialPath.includes('Home.html#!/')) {
-                $scope.showImage = true;
-                localStorage.setItem('showImage', JSON.stringify(true));
-            } else if (showImageStored !== null) {
-                $scope.showImage = JSON.parse(showImageStored);
-            } else {
-                $scope.showImage = false;
-            }
+    // Imposta l'immagine visibile se la pagina è home al primo caricamento
+    if (initialPath.includes('Home.html#!/')) {
+        $scope.showImage = true;
+        localStorage.setItem('showImage', JSON.stringify(true));
+    } else if (showImageStored !== null) {
+        $scope.showImage = JSON.parse(showImageStored);
+    } else {
+        $scope.showImage = false;
+    }
 
-            $scope.isMenuOpen = false;
+    $scope.isMenuOpen = false;
 
-            // Ascolta il cambiamento di rotta
-            $rootScope.$on('$routeChangeSuccess', function(event, current) {
-                var path = current.$$route.originalPath;
-                if (path === '/home') {
-                    $scope.showImage = true;
-                } else if (path === '/chisono' || path === '/contatti' || path === '/news') {
-                    $scope.showImage = false;
-                }
-                localStorage.setItem('showImage', JSON.stringify($scope.showImage));
+    // Funzione per nascondere l'immagine e salvare lo stato in localStorage
+    $scope.hideImage = function(clickedLink) {
+        if (clickedLink === 'chisono' || clickedLink === 'contatti' || clickedLink === 'news') {
+            $scope.showImage = false;
+        } else if (clickedLink === 'home') {
+            $scope.showImage = true;
+        }
+        localStorage.setItem('showImage', JSON.stringify($scope.showImage));
+    };
+
+
+
+    // Funzione per aprire/chiudere il menù
+    $scope.toggleMenu = function() {
+        $scope.isMenuOpen = !$scope.isMenuOpen;
+    };
+
+    $scope.closeMenu = function() {
+        $scope.isMenuOpen = false;
+    };
+});
+    
+
+    // Configurazione del routing
+    app.config(function($routeProvider) {
+        $routeProvider
+            .when("/", {
+                templateUrl: "main.html"
+            })
+            .when("/chisono", {
+                templateUrl: "ChiSono.html"
+            })
+            .when("/news", {
+                templateUrl: "News.html"
+            })
+            .when("/contatti", {
+                templateUrl: "Contatti.html"
             });
-
-            // Funzione per nascondere l'immagine e salvare lo stato in localStorage
-            $scope.hideImage = function(clickedLink) {
-                if (clickedLink === 'chisono' || clickedLink === 'contatti' || clickedLink === 'news') {
-                    $scope.showImage = false;
-                } else if (clickedLink === 'home') {
-                    $scope.showImage = true;
-                }
-                localStorage.setItem('showImage', JSON.stringify($scope.showImage));
-            };
-
-            // Funzione per aprire/chiudere il menù
-            $scope.toggleMenu = function() {
-                $scope.isMenuOpen = !$scope.isMenuOpen;
-            };
-
-            $scope.closeMenu = function() {
-                $scope.isMenuOpen = false;
-            };
-        });
-
-        // Configurazione del routing
-        app.config(function($routeProvider) {
-            $routeProvider
-                .when("/", {
-                    templateUrl: "main.html"
-                })
-                .when("/home", {
-                    templateUrl: "main.html"
-                })
-                .when("/chisono", {
-                    templateUrl: "ChiSono.html"
-                })
-                .when("/news", {
-                    templateUrl: "News.html"
-                })
-                .when("/contatti", {
-                    templateUrl: "Contatti.html"
-                });
-        });
-    </script>
+    });
+</script>
 </body>
 </html>
