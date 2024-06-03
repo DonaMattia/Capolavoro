@@ -1,24 +1,32 @@
 <style>
     #blurred-center {
-        min-width: 100%;
-        height: 100%;
-        background-color: rgba(79, 79, 79, 0.5);
-        backdrop-filter: blur(25px);
-        display: block;
-        color: white;
-        font-size: 1.3rem;
-        font-family: 'Anton', sans-serif;
-        border-radius: 50px;
-    }
+    min-width: 100%;
+    height: 100%;
+    background-color: rgba(79, 79, 79, 0.5);
+    backdrop-filter: blur(25px);
+    display: block;
+    color: white;
+    font-size: 1.3rem;
+    font-family: 'Anton', sans-serif;
+    border-radius: 50px;
+}
 
-    a {
+a {
     color: white; /* Colore normale del link */
     text-decoration: none;
-    }
+}
 
-    a:hover {
-        color: #B0E0E6;
+a:hover {
+    color: #B0E0E6;
+}
+
+/* Media query per schermi più piccoli di 768px */
+@media (max-width: 768px) {
+    .blurred-background {
+        min-height: 350px; /* Lunghezza minima */
+        text-align: center; /* Centra il testo */
     }
+}
 </style>
 <div id="blurred-center">
     <br>
